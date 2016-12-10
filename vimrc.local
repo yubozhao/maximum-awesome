@@ -1,11 +1,15 @@
 set nocursorline " don't highlight current line
 
-" keyboard shortcuts
-inoremap jj <ESC>
+" Key Bindings
+let mapleader = ","
 
-" highlight search
-"set hlsearch
-"nmap <leader>hl :let @/ = ""<CR>
+" keyboard shortcuts
+inoremap kj <Esc>
+
+" Split windows
+nnoremap <Leader>s :sp<cr><C-w><C-w>
+nnoremap <Leader>v :vsp<cr><C-w><C-w>
+
 
 " gui settings
 if (&t_Co == 256 || has('gui_running'))
@@ -15,6 +19,10 @@ if (&t_Co == 256 || has('gui_running'))
     colorscheme desert
   endif
 endif
+
+" syntax highlighter settings
+let g:syntastic_javascript_checkers = ['eslint', 'flow', 'tern', 'standard']
+
 
 " Disambiguate ,a & ,t from the Align plugin, making them fast again.
 "
